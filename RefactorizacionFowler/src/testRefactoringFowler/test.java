@@ -1,11 +1,11 @@
 package testRefactoringFowler;
 
 import org.junit.Test;
+import org.refactorizacionFowler.Customer;
+import org.refactorizacionFowler.Movie;
+import org.refactorizacionFowler.Rental;
 
 import junit.framework.TestCase;
-import refactorizacionFowler.Customer;
-import refactorizacionFowler.Movie;
-import refactorizacionFowler.Rental;
 
 public class test extends TestCase {
 	@Test

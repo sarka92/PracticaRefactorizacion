@@ -1,4 +1,4 @@
-package refactorizacionFowler;
+package org.refactorizacionFowler;
 
 public class Movie {
 	public static final int CHILDRENS = 2;
