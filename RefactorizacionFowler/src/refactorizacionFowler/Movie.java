@@ -4,12 +4,12 @@ public class Movie {
 	public static final int CHILDRENS = 2;
 	public static final int REGULAR = 0;
 	public static final int NEW_RELEASE = 1;
-	private String _title;
+	private String _name;
 	private int _priceCode;
 
-	public Movie(String title, int priceCode) {
-		_title = title;
-		_priceCode = priceCode;
+	public Movie(String name, int priceCode) {
+		_name = name;
+		setPriceCode(priceCode);
 	}
 
 	public int getPriceCode() {
@@ -21,10 +21,10 @@ public class Movie {
 	}
 
 	public String getTitle() {
-		return _title;
+		return _name;
 	}
 
-	double getCharge(int daysRented) {
+	double getTotalCharge(int daysRented) {
 		double result = 0;
 		switch (getPriceCode()) {
 		case Movie.REGULAR:
@@ -44,11 +44,13 @@ public class Movie {
 		return result;
 	}
 
-	int getFrequentRenterPoints(int daysRented) {
+	int getTotalFrequentRenterPoints(int daysRented) {
 		if ((getPriceCode() == Movie.NEW_RELEASE) && daysRented > 1)
 			return 2;
 		else
 			return 1;
 
 	}
+
+	
 }
