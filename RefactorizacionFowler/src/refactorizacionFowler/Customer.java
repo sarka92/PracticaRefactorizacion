@@ -28,12 +28,12 @@ public class Customer {
 			double thisAmount = 0;
 			Rental each = (Rental) rentals.nextElement();
 			// determine amounts for each line
-			thisAmount = each.getCharge();
+			thisAmount = each._movie.getCharge(each);
 			frequentRenterPoints = each.getFrequentRenterPoints();
 			// show figures for this rental
 			result += "\t" + each.getMovie().getTitle() + "\t"
-					+ String.valueOf(each.getCharge()) + "\n";
-			totalAmount += each.getCharge();
+					+ String.valueOf(each._movie.getCharge(each)) + "\n";
+			totalAmount += each._movie.getCharge(each);
 		}
 		// add footer lines
 		result += "Amount owed is " + String.valueOf(getTotalCharge()) + "\n";
@@ -57,7 +57,7 @@ public class Customer {
 		Enumeration rentals = _rentals.elements();
 		while (rentals.hasMoreElements()) {
 			Rental each = (Rental) rentals.nextElement();
-			result += each.getCharge();
+			result += each._movie.getCharge(each);
 		}
 		return result;
 	}
@@ -70,7 +70,7 @@ public class Customer {
 		
 		 //show figures for each rental
 		 result += each.getMovie().getTitle()+ ": " +
-		 String.valueOf(each.getCharge()) + "<BR>\n";
+		 String.valueOf(each._movie.getCharge(each)) + "<BR>\n";
 		 }
 		 //add footer lines
 		 result += "<P>You owe <EM>" + String.valueOf(getTotalCharge()) +
