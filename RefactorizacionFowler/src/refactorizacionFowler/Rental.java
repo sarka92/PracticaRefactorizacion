@@ -22,6 +22,6 @@ public class Rental {
 	}
 
 	double getCharge() {
-		return _movie.getTotalCharge(_daysRented);
+		return _movie._price.getTotalCharge(_daysRented);
 	}
 }
